@@ -85,6 +85,7 @@ public class StoreApp {
                             System.out.printf("%s: $%.2f%n", p.getProductName(), p.getPrice());
                        }
                     }
+                    formatSpaces();
                     break;
                 case 3:
                     //addProducts()
