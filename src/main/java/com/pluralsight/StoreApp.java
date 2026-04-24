@@ -1,5 +1,8 @@
 package com.pluralsight;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class StoreApp {
@@ -9,6 +12,7 @@ public class StoreApp {
         System.out.println("Welcome to the online store!");
 
         homeScreen(scanner);
+
     }
     public static void homeScreen(Scanner scanner) {
 
@@ -23,12 +27,12 @@ public class StoreApp {
 
             switch (userOption) {
                 case 1:
-                    //               displayProducts();
-                    System.out.println("\n\n");
+                    displayProducts(scanner);
+                    formatSpaces();
                     break;
                 case 2:
                     //               displayCart();
-                    System.out.println("\n\n");
+                    formatSpaces();
                     break;
                 case 0:
                     System.out.println("Thanks for visiting my online store!!");
@@ -37,10 +41,24 @@ public class StoreApp {
                 default:
                     System.out.println("Incorrect option entered");
                     scanner.nextLine();
-                    System.out.println("\n\n");
+                    formatSpaces();
             }
 
 
         }
+
+    }
+
+    public static void formatSpaces() {
+        System.out.println("\n\n");
+    }
+    public static void displayProducts(Scanner scanner){
+        try{
+            BufferedReader bufreader = new BufferedReader(new FileReader("src/main/resources/products.csv"));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
     }
