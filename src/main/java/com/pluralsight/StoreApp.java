@@ -78,7 +78,13 @@ public class StoreApp {
                     formatSpaces();
                     break;
                 case 2:
-                    //searchProducts()
+                    System.out.print("What product are you looking for today?: ");
+                    String userInput = scanner.nextLine();
+                    for (Product p : products.values()) {
+                       if (p.getProductName().toLowerCase().contains(userInput.toLowerCase())) {
+                            System.out.printf("%s: $%.2f%n", p.getProductName(), p.getPrice());
+                       }
+                    }
                     break;
                 case 3:
                     //addProducts()
