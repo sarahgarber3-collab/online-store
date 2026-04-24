@@ -58,8 +58,40 @@ public class StoreApp {
 
     public static void displayProducts(Scanner scanner) {
         HashMap<String,Product> products = loadInventory();
-        for(Product p : products.values()) {
-            System.out.printf("%s: %.2f%n", p.getProductName(),p.getPrice());
+
+        boolean run = true;
+        while(run) {
+            System.out.println("Select from the following options: ");
+            System.out.println("\t1) View All Products");
+            System.out.println("\t2) Search Products");
+            System.out.println("\t3) Add Product");
+            System.out.println("\t0) Go Back");
+            System.out.print("Enter your selection: ");
+            int userOption = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (userOption) {
+                case 1:
+                    for (Product p : products.values()) {
+                        System.out.printf("%s: $%.2f%n", p.getProductName(), p.getPrice());
+                    }
+                    formatSpaces();
+                    break;
+                case 2:
+                    //searchProducts()
+                    break;
+                case 3:
+                    //addProducts()
+                    break;
+                case 0:
+                    formatSpaces();
+                    run = false;
+                    break;
+                default:
+                    System.out.println("Incorrect option entered (press ENTER to continue)");
+                    scanner.nextLine();
+                    formatSpaces();
+            }
         }
 
     }
