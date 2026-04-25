@@ -155,6 +155,8 @@ public class StoreApp {
 
 
             }
+        }
+    }
 
             public static HashMap<String, Product> loadInventory () {
                 HashMap<String, Product> products = new HashMap<>();
@@ -186,5 +188,3 @@ public class StoreApp {
 
 
         }
-    }
-    }
